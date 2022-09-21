@@ -1,0 +1,44 @@
+* {
+  font-family: 'Charmonman';
+}
+
+body {
+  display: flex;
+  justify-content: space-between;
+}
+
+h1 {
+  display: flex;
+}
+
+h2 {
+  display: flex;
+  /* height: 100% */
+}
+
+h3 {
+  display: flex;
+  /* height: 100%; */
+}
+
+.human-side {
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+  background-color: #4446cc;
+}
+
+.main-section {
+  display: flex;
+  width: 70%;
+  height: 915px;
+  background-color: #335099;
+  justify-content: center;
+}
+
+.computer-side {
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+  background-color: #4446cc;
+}
