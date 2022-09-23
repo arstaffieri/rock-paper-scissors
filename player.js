@@ -1,10 +1,20 @@
+
+
 class Player {
-  constructor(name, token, wins) {
+  constructor(name, token) {
     this.name = name
     this.token = token
-    this.wins = wins
+    this.wins = 0
+    this.turn = false
   }
   takeTurn() {
-    
+    if(this.turn === false) {
+      this.turn = true
+    } else {
+      this.turn = false
+    }
+  }
+  winCounter() {
+    this.wins = this.wins + 1
   }
 }
