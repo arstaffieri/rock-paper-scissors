@@ -15,6 +15,6 @@ class Player {
     }
   }
   winCounter() {
-    this.wins = this.wins + 1
+    this.wins++
   }
 }
