@@ -50,15 +50,12 @@ class Game {
     }
   }
   pickGame(gameType) {
-    console.log("hi")
     this.gamePicked = gameType
     if(this.gamePicked === 'simple') {
       var tokenArray = ["rock", "paper", "scissors"]
-      console.log(tokenArray)
       this.computer.choice = tokenArray[Math.floor(Math.random() * tokenArray.length)]
     } else {
       var complexTokenArray = ["rock","paper", "scissors", "dinosaur", "alien"]
-      console.log(complexTokenArray)
       this.computer.choice = complexTokenArray[Math.floor(Math.random() * complexTokenArray.length)]
     }
     console.log(this.computer.choice)
@@ -67,4 +64,9 @@ class Game {
     this.human.choice = token
     console.log(token)
   }
+  // clearGame() {
+  //   this.human.choice = ""
+  //   this.computer.choice = ""
+  //   this.gamePicked = ""
+  // }
 }
