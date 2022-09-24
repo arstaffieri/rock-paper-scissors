@@ -36,6 +36,18 @@ body {
   align-items: center;
 }
 
+.piece {
+  width: 150px;
+  height: auto;
+  border-radius: 20px;
+}
+
+#rock {
+  width: 150px;
+  height: auto;
+  border-radius: 20px;
+}
+
 .classic-section {
   background-color: #2196f3;
   justify-content: center;
@@ -58,4 +70,8 @@ body {
   flex-direction: column;
   width: 15%;
   background-color: #4446cc;
+}
+
+.hidden {
+  display: none;
 }
