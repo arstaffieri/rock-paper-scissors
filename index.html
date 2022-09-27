@@ -8,11 +8,11 @@
   <body>
     <section class="human-side">
       <h2>Human</h2>
-      <h3>Wins: 0</h3>
+      <h3>Wins: <span id="human-score">0</span></h3>
     </section>
     <article class="main-section">
       <h1>Rock, Paper, Scissors</h1>
-        <section class="game-rules hidden">
+        <section class="game-rules">
           <section class="classic-section">
             <h3>Classic Game</h3>
               <p>Rock > Scissors</p>
@@ -27,22 +27,26 @@
               <p>Dinosaur > Alien and Paper</p>
           </section>
         </section>
-      <section class="game-pieces ">
-        <h3 class="choose-weapon ">Choose your weapon!</h3>
-        <section class="classic-pieces">
-          <img class="piece" id="rock" src="assets/Asteroid.png">
+      <section class="game-pieces">
+        <h3 class="choose-weapon hidden">Choose your weapon!</h3>
+        <section class="classic-pieces hidden">
+          <img class="piece" id="rock" src="assets/Rock.png">
           <img class="piece" id="paper" src="assets/Paper.png">
           <img class="piece" id="scissors" src="assets/Scissors.png">
         </section>
-        <section class="complex-pieces">
-          <img class="piece" id="alien" src="assets/Alien.jpeg">
-          <img class="piece" id="dinosaur" src="assets/Dinosaur.jpeg">
+        <section class="complex-pieces hidden">
+          <img class="piece" id="alien" src="assets/Alien.png">
+          <img class="piece" id="dinosaur" src="assets/Dinosaur.png">
         </section>
+      </section>
+      <section class="chosen-pieces hidden">
+        <div class="chosen-piece" id="player-choice"></div>
+        <div class="chosen-piece" id="computer-choice"></div>
       </section>
     </article>
     <section class="computer-side">
       <h2>Computer</h2>
-      <h3>Wins: 0</h3>
+      <h3>Wins: <span id="computer-score">0</span></h3>
     </section>
     <script type="text/javascript" src="player.js"></script>
     <script type="text/javascript" src="game.js"></script>
