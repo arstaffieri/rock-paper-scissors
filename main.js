@@ -14,22 +14,27 @@ var playerChoice = document.querySelector('#player-choice')
 var computerChoice = document.querySelector('#computer-choice')
 var humanScore = document.querySelector('#human-score')
 var computerScore = document.querySelector('#computer-score')
+var changeButton = document.querySelector('#change-button')
+var timeOut = null
 
 //eventListeners
 chooseClassic.addEventListener('click', showClassic)
 chooseComplex.addEventListener('click', showComplex)
-rock.addEventListener('click', playGame)
-paper.addEventListener('click', playGame)
-scissors.addEventListener('click', playGame)
-alien.addEventListener('click', playGame)
-dinosaur.addEventListener('click', playGame)
+rock.addEventListener('click', selectPiece)
+paper.addEventListener('click', selectPiece)
+scissors.addEventListener('click', selectPiece)
+alien.addEventListener('click', selectPiece)
+dinosaur.addEventListener('click', selectPiece)
+changeButton.addEventListener('click', changeGame)
 
 //functions
 function showClassic() {
   chooseClassic.classList.add('hidden')
   chooseComplex.classList.add('hidden')
   chooseWeaponText.classList.remove('hidden')
+  chooseWeaponText.innerText = "Choose your weapon!"
   classicPieces.classList.remove('hidden')
+  changeButton.classList.remove('hidden')
   newGame.pickGame('classic')
 }
 
@@ -37,17 +42,20 @@ function showComplex() {
   chooseClassic.classList.add('hidden')
   chooseComplex.classList.add('hidden')
   chooseWeaponText.classList.remove('hidden')
+  chooseWeaponText.innerText = "Choose your weapon!"
   classicPieces.classList.remove('hidden')
   complexPieces.classList.remove('hidden')
+  changeButton.classList.remove('hidden')
   newGame.pickGame('complex')
 }
 
 //Could make the game boards and then show and hide them.
 
-function playGame(event) {
+function selectPiece(event) {
   newGame.human.choice = event.target.id
-  playerChoice.innerHTML += `<img src="assets/${newGame.human.choice}.png">`
-  computerChoice.innerHTML += `<img src="assets/${newGame.computer.choice}.png">`
+  playerChoice.innerHTML += `Player chooses <img src="assets/${newGame.human.choice}.png">`
+  computerChoice.innerHTML += `Computer chooses <img src="assets/${newGame.computer.choice}.png">`
+  changeButton.classList.remove('hidden')
   classicPieces.classList.add('hidden')
   complexPieces.classList.add('hidden')
   chosenPieces.classList.remove('hidden')
@@ -61,11 +69,12 @@ function playGame(event) {
   }
   humanScore.innerText = newGame.human.wins
   computerScore.innerText = newGame.computer.wins
-  setTimeout(resetGame, 2000)
+  timeOut = setTimeout(resetGame, 2000)
 }
 
 function resetGame() {
   newGame.clearGame()
+  changeButton.classList.remove('hidden')
   if (newGame.gamePicked === 'classic') {
     showClassic()
   } else {
@@ -74,5 +83,18 @@ function resetGame() {
   chosenPieces.classList.add('hidden')
   playerChoice.innerHTML = ""
   computerChoice.innerHTML = ""
-  chooseWeaponText.innerText = "Choose your weapon!"
+}
+
+function changeGame() {
+  clearTimeout(timeOut)
+  newGame.clearGame()
+  playerChoice.innerHTML = ""
+  computerChoice.innerHTML = ""
+  chooseWeaponText.classList.add('hidden')
+  chooseClassic.classList.remove('hidden')
+  chooseComplex.classList.remove('hidden')
+  classicPieces.classList.add('hidden')
+  complexPieces.classList.add('hidden')
+  chosenPieces.classList.add('hidden')
+  changeButton.classList.add('hidden')
 }
