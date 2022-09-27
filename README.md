@@ -17,7 +17,7 @@ Clone my repo, open it in a text editor, and type in a terminal 'open index.html
 - Dinosaur > Alien and Paper
 
 #### Preview of App: 
-../assets/RPS.mov
+https://giphy.com/embed/makawfFUHcjAGXfq2g
 
 #### Context:
 This is the final solo project in Mod 1. I received it September 20th and finished it September 27th. I'm currently in the 6th week of Mod 1. 
